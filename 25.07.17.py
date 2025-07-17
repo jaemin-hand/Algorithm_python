@@ -5,8 +5,13 @@ N = int(input())
 scores = list(map(int,input().split()))
 
 M = max(scores)
-News = [s / M * 100 for s in scores]
 
-avg = sum(News) / N
+temp = []
+
+for i in scores:
+    temp.append(i / M * 100)
+
+total = sum(temp)
+avg = total / N
 
 print(avg)
