@@ -14,7 +14,7 @@ for i in Alpa:
     if i == 'A' or i == 'B' or i == 'C':
         result += A
     elif i == 'D' or i == 'E' or i == 'F':
-        result += D
+        result += D 
     elif i == 'G' or i == 'H' or i == 'I':
         result += G
     elif i == 'J' or i == 'K' or i == 'L':
