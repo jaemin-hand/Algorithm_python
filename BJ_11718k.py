@@ -7,3 +7,4 @@ while(1):
     except EOFError:
         break
     print(A)
+    
