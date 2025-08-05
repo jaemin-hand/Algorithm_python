@@ -13,6 +13,6 @@ cro = {1:'c=',
        8:'z='}
 
 for pattern in cro.values():
-    text = text.replace(pattern,"*")
+    text = text.replace(pattern," ")
 
 print(len(text))
