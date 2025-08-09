@@ -21,12 +21,8 @@ maxIdx = 0
 for i in range(0,26):
     if(array[maxIdx] < array[i]):
         maxIdx = i
-
-for i in range(0,26):
     if(array[i] == max(array)):
         counter += 1
-
-for i in range(0,26):
     result = chr(maxIdx + 65)
 
 if(counter > 1):
