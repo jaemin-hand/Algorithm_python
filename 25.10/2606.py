@@ -1,37 +1,41 @@
 import sys
 sys.stdin = open('input.txt','r')
 
-N = int(input())
-M = int(input())
+cpu = int(input())
+# 7
 
-node = [[] for _ in range(N + 1)]
-# 연결된 횟수 보다 1더 받아서 0인덱스 신경쓰기
+line = int(input())
+# 6
 
-for _ in range(M):
-    a,b = map(int,input().split())
-    # a, b 에 우선 노드값 받기
+node = [[] for _ in range(cpu + 1)]
+# [ [] [] [] [] [] [] [] [] ]
+
+for _ in range(line):
+    a, b = map(int,input().split())
+    # 1 , 2
 
     node[a].append(b)
+    # node[1].append(2)
+    # [ [] [1] [] [] [] [] [] [] ]
+
     node[b].append(a)
-    # [a,b] a번 노드에 b연결되어있다 흔적남기기
-    #       b번 노드에 a연결되어있다 흔적남기기
+    # node[2].append(1)
+    # [ [] [2] [1] [] [] [] [] [] ]
 
-visited = [0] * (N+1)
-# 방문흔적 0, 1로 표시
+visited = [0] * (cpu + 1)
 
-counter = 0
+count = 0
 
-def dfs(start_node):
-    global counter
-    # counter 가져와서 쓰기
-
-    visited[start_node] = 1
+def dfs(start):
+    global count
     
-    for next_node in node[start_node]:
-        # start_node 가 1로 들어오니, node[1]
-        if not visited[next_node]:
-            counter += 1
-            dfs(next_node)
+    visited[start] = 1
 
+    for i in node[start]:
+        if visited[i] == 0:
+            count += 1
+            dfs(i)
+    
 dfs(1)
-print(counter)
+
+print(count)
