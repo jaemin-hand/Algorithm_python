@@ -16,10 +16,11 @@ count = 0
 start = 0
 end = N-1
 
-while(end - start != 0):
+while(start < end):
     if(array[start] + array[end] == M):
         count += 1
         start += 1
+        end -=1
     elif(array[start] + array[end] < M):
         start+=1
     else:
