@@ -16,13 +16,15 @@ count = 0
 start = 0
 end = N-1
 
-for i in range(N):
-    pass
+while(end - start != 0):
+    if(array[start] + array[end] == M):
+        count += 1
+        start += 1
+    elif(array[start] + array[end] < M):
+        start+=1
+    else:
+        end-=1
 
-# for i in range(N):
-#     for j in range(i+1,N):
-#         if(array[i] + array[j]) == M:
-#             count += 1
 
 
 print(count)
